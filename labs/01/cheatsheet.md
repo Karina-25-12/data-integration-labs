@@ -859,3 +859,168 @@ Testing Markdown in different environments helps identify compatibility issues.
 
 
 
+## 9. Pitfalls
+
+### Pitfall 1: Line Breaks Disappear
+
+**Problem:**
+
+I expected two consecutive lines in my Markdown
+source to appear on separate lines.
+
+**Markdown source:**
+
+```markdown
+First line
+Second line
+```
+
+**Expected rendering:**
+
+Two separate lines.
+
+**Actual Markdown behavior:**
+
+In CommonMark and GitHub Markdown files, a single
+newline does not necessarily create a visible
+line break. The text usually appears in the
+same paragraph.
+
+**Solution:**
+
+I can add a backslash at the end of the first
+line to force a line break.
+
+```markdown
+First line\
+Second line
+```
+
+**Conclusion:**
+
+CommonMark distinguishes between soft line
+breaks and hard line breaks. GitHub also renders
+line breaks differently in Markdown files and
+in issue comments.
+
+### Pitfall 2: Tables Do Not Work in CommonMark
+
+**Problem:**
+
+I expected the same table syntax to work in
+both CommonMark and GitHub.
+
+**Markdown source:**
+
+```markdown
+| Name | Grade |
+|------|-------|
+| Anna | 1.3   |
+| Ben  | 2.0   |
+```
+
+**Expected rendering:**
+
+A table containing two columns.
+
+**Actual Markdown behavior:**
+
+CommonMark does not support this table syntax.
+The text is not converted into an HTML table.
+
+GitHub Flavored Markdown supports tables and
+renders the same source as a formatted table.
+
+**Solution:**
+
+I use GitHub Flavored Markdown when I need
+tables, and I verify the result in GitHub
+Preview.
+
+**Conclusion:**
+
+Tables are a GitHub Flavored Markdown
+extension, not a CommonMark feature.
+
+### Pitfall 3: Task Lists Are Not Standard Markdown
+
+**Problem:**
+
+I expected the following syntax to produce
+checkboxes in every Markdown environment.
+
+**Markdown source:**
+
+```markdown
+- [x] Completed
+- [ ] Not completed
+```
+
+**Expected rendering:**
+
+A list containing one checked and one
+unchecked checkbox.
+
+**Actual Markdown behavior:**
+
+In CommonMark, the square brackets are treated
+as ordinary text within list items.
+
+GitHub Flavored Markdown recognizes this syntax
+and creates checkboxes.
+
+**Solution:**
+
+I use GitHub Flavored Markdown for task lists.
+If compatibility with standard CommonMark is
+required, I use ordinary unordered lists.
+
+**Conclusion:**
+
+Task lists are an extension of CommonMark.
+Their interactive behavior depends on the
+GitHub context.
+
+### Pitfall 4: Mentions and Issue References
+
+**Problem:**
+
+I expected user mentions and issue numbers
+to become clickable links in every Markdown
+environment.
+
+**Markdown source:**
+
+```markdown
+Hello @username!
+
+Please check issue #1.
+```
+
+**Expected rendering:**
+
+Clickable links to a GitHub user and an issue.
+
+**Actual Markdown behavior:**
+
+CommonMark does not automatically interpret
+GitHub usernames or issue numbers as links.
+
+GitHub provides automatic linking for certain
+references. The exact behavior depends on the
+context in which the Markdown is rendered.
+
+**Solution:**
+
+I test mentions and issue references in a
+GitHub Markdown file and in an issue comment.
+
+For reliable navigation in a README, I can
+also use an explicit Markdown link.
+
+**Conclusion:**
+
+GitHub-specific references should be tested
+in their intended context rather than only
+in a general Markdown editor.
+

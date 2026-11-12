@@ -24,3 +24,29 @@ Markdown cheat sheet assignments."
 - Checked both repositories on GitHub
 - Verified README links
 - Used GitHub Preview to inspect Markdown
+
+
+## 2026-11-12 – Task 4: Open Source
+
+**Tool and model:** ChatGPT, GPT-6
+
+**Prompt:**
+"Explain Task 4 about open-source projects
+step by step and provide a complete example
+using the Requests Python library."
+
+**Accepted:**
+- Suggested structure of the analysis
+- Explanation of the Apache 2.0 licence
+- Research summary and source links
+
+**Modified:**
+- Adapted the text to the assignment
+- Added my own GitHub repository information
+
+**Verification:**
+- Checked licence information on GitHub
+- Compared SPDX identifiers using GitHub API
+- Checked releases, issues and pull requests
+- Reviewed community and contributing resources
+
